@@ -1,8 +1,8 @@
 class Tank:
-    count = 0
+    count = 0#общее колчтчество изготовленных танка
     SIZE = 100
-    def __init__(self,canvas,x,y,model,ammo,speed):
-        self.canvas = canvas
+    def __init__(self,canvas,x,y,model,ammo,speed):# init - инцилиатор
+        self.canvas = canvas#холст
         Tank.count += 1
         self.model = model
         self.hp= 100
@@ -45,7 +45,7 @@ class Tank:
     def create(self):
         self.id = self.canvas.create_rectangle(self.x,self.y,self.x+ Tank.SIZE,self.y+ Tank.SIZE,fill = 'red')
     def repaint(self):
-        self.canvas.moveto(self.id, x = self.x , y = self.y)
+        self.canvas.moveto(self.id, x = self.x , y = self.y)#передвижение танка по холсту
 
     def __str__(self):
         return(f'Модель:{self.model},Здоровье:{self.hp},Опыт:{self.xp},Пули:{self.ammo}'
